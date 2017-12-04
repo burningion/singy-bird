@@ -1,4 +1,4 @@
-from voiceController import get_vocal_range, position_on_range, q
+from voiceController import get_vocal_range, position_on_range, q, stream
 
 from threading import Thread
 
@@ -156,7 +156,7 @@ def draw_pygame():
         {'x': screenWidth + 200 + (screenWidth / 2), 'y': newPipe2[1]['y']},
     ]
 
-    pipeVelX = -4
+    pipeVelX = -2
 
 
     while running:
@@ -188,7 +188,7 @@ def draw_pygame():
             lPipe['x'] += pipeVelX
 
         # add new pipe when first pipe is about to touch left of screen
-        if 0 < upperPipes[0]['x'] < 5:
+        if 0 < upperPipes[0]['x'] < 4:
             newPipe = getRandomPipe()
             upperPipes.append(newPipe[0])
             lowerPipes.append(newPipe[1])
