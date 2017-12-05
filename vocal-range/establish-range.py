@@ -64,10 +64,13 @@ while running:
                     have_low = True
                     titleCurr = titleFont.render("High Note", True, (128, 128, 0))
                 else:
-                    high_note = noteHeldCurrently
-                    have_high = True
-                    titleText = titleFont.render("Perfect!", True, (0, 128, 0))
-                    titleCurr = titleFont.render("%s to %s" % (low_note, high_note), True, (0, 128, 0))
+                    if int(noteHeldCurrently[-1]) <= int(low_note[-1]):
+                        noteHeld = 0 # we're holding a lower octave note than the established range
+                    elif int(noteHeldCurrently[-1]) >= int(high_note[-1]):
+                        high_note = noteHeldCurrently
+                        have_high = True
+                        titleText = titleFont.render("Perfect!", True, (0, 128, 0))
+                        titleCurr = titleFont.render("%s to %s" % (low_note, high_note), True, (0, 128, 0))
         else:
             noteHeldCurrently = b['Note']
             noteHeld = 1
