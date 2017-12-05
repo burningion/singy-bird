@@ -73,6 +73,4 @@ def get_current_note(volume_thresh=0.01, printOut=False):
             q.put({'Note': current, 'Cents': current_pitch.microtone.cents})
 
 if __name__ == '__main__':
-    get_current_note(volume_thresh=0.001)
-    if not q.empty():
-        print(q)
+    get_current_note(volume_thresh=0.001, printOut=True)
