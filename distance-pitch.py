@@ -29,7 +29,7 @@ stream = p.open(format=pyaudio.paFloat32,
 time.sleep(1)
 # Aubio's pitch detection.
 pDetection = aubio.pitch("default", 2048,
-    2048//2, 44100)
+                        2048//2, 44100)
 # Set unit.
 pDetection.set_unit("Hz")
 pDetection.set_silence(-40)
