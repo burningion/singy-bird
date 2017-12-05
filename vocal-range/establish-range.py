@@ -1,7 +1,7 @@
-from voiceController import q, get_current_note
 from threading import Thread
-
 import pygame
+
+from voiceController import q, get_current_note
 
 pygame.init()
 
