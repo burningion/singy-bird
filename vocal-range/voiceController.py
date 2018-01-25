@@ -13,7 +13,7 @@ parser = argparse.ArgumentParser()
 parser.add_argument("-input", required=False, type=int, help="Audio Input Device")
 args = parser.parse_args()
 
-if not args.input:
+if args.input is None:
     print("No input device specified. Printing list of input devices now: ")
     p = pyaudio.PyAudio()
     for i in range(p.get_device_count()):
